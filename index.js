@@ -8,19 +8,19 @@ const options = {
 };
 
     const pinkFloyd = () => {
-    fetch('https://deezerdevs-deezer.p.rapidapi.com/info/search?q=pink_floyd', options)
+    fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q=pink_floyd', options)
     .then(response => response.json())
     .then(songs => {
     
     
         console.log(songs)
-    for (let i = 0; i < songs.length; i++) {
-        const song = songs[i];
-        const grid = document.querySelector(".container > .row")
+    for (let i = 0; i < songs.data.length; i++) {
+        const song = songs.data[i];
+        const grid = document.querySelectorAll(".container > .row")[0]
         const col = document.createElement("div")
         col.className = "col-sm-6 col-md-4 col-lg-3"
         col.innerHTML = `<div class="card" style="width: 15rem;">
-          <img src=${song.md5_image} class="card-img-top" alt=${song.title}>
+          <img src=${songs.data[i].md5_image} class="card-img-top" alt=${song.title_short}>
           <div class="card-body">
             <p class="card-text">${song.title}</p>
           </div>
@@ -35,19 +35,19 @@ const options = {
 
 
     const daftPunk = () => {
-    fetch('https://deezerdevs-deezer.p.rapidapi.com/info/search?q=daft_punk', options)
+    fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q=daft_punk', options)
     .then(response => response.json())
     .then(songs => {
     
     
         console.log(songs)
-    for (let i = 0; i < songs.length; i++) {
-        const song = songs[i];
-        const grid = document.querySelector(".container > .row")
+    for (let i = 0; i < songs.data.length; i++) {
+        const song = songs.data[i];
+        const grid = document.querySelectorAll(".container > .row")[1]
         const col = document.createElement("div")
         col.className = "col-sm-6 col-md-4 col-lg-3"
         col.innerHTML = `<div class="card" style="width: 15rem;">
-          <img src=${song.md5_image} class="card-img-top" alt=${song.title}>
+          <img src=${song.md5_image} class="card-img-top" alt=${song.title_short}>
           <div class="card-body">
             <p class="card-text">${song.title}</p>
           </div>
@@ -59,19 +59,19 @@ const options = {
 }
 
     const metallica = () => {
-    fetch('https://deezerdevs-deezer.p.rapidapi.com/info/search?q=metallica', options)
+    fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q=metallica', options)
     .then(response => response.json())
     .then(songs => {
     
     
         console.log(songs)
-    for (let i = 0; i < songs.length; i++) {
-        const song = songs[i];
-        const grid = document.querySelector(".container > .row")
+    for (let i = 0; i < songs.data.length; i++) {
+        const song = songs.data[i];
+        const grid = document.querySelectorAll(".container > .row")[2]
         const col = document.createElement("div")
         col.className = "col-sm-6 col-md-4 col-lg-3"
         col.innerHTML = `<div class="card" style="width: 15rem;">
-          <img src=${song.md5_image} class="card-img-top" alt=${song.title}>
+          <img src=${song.md5_image} class="card-img-top" alt=${song.title_short}>
           <div class="card-body">
             <p class="card-text">${song.title}</p>
           </div>
