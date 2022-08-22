@@ -16,11 +16,11 @@ const options = {
         console.log(songs)
     for (let i = 0; i < songs.data.length; i++) {
         const song = songs.data[i];
-        const grid = document.querySelectorAll(".container > .row")[0]
+        const grid = document.querySelector(".container > .row")
         const col = document.createElement("div")
         col.className = "col-sm-6 col-md-4 col-lg-3"
         col.innerHTML = `<div class="card" style="width: 15rem;">
-          <img src=${songs.data[i].md5_image} class="card-img-top" alt=${song.title_short}>
+          <img src=${song.album.cover_medium} class="card-img-top" alt=${song.title_short}>
           <div class="card-body">
             <p class="card-text">${song.title}</p>
           </div>
@@ -43,11 +43,12 @@ const options = {
         console.log(songs)
     for (let i = 0; i < songs.data.length; i++) {
         const song = songs.data[i];
-        const grid = document.querySelectorAll(".container > .row")[1]
+        const grid = document.querySelector(".container > .row")
         const col = document.createElement("div")
         col.className = "col-sm-6 col-md-4 col-lg-3"
+        col.innerHTML = ``
         col.innerHTML = `<div class="card" style="width: 15rem;">
-          <img src=${song.md5_image} class="card-img-top" alt=${song.title_short}>
+          <img src=${song.album.cover_medium} class="card-img-top" alt=${song.title_short}>
           <div class="card-body">
             <p class="card-text">${song.title}</p>
           </div>
@@ -55,7 +56,7 @@ const options = {
         grid.appendChild(col)
     }})
 
-    .catch(err => console.error(err));
+.catch(err => console.error(err));
 }
 
     const metallica = () => {
@@ -67,11 +68,11 @@ const options = {
         console.log(songs)
     for (let i = 0; i < songs.data.length; i++) {
         const song = songs.data[i];
-        const grid = document.querySelectorAll(".container > .row")[2]
+        const grid = document.querySelector(".container > .row")
         const col = document.createElement("div")
         col.className = "col-sm-6 col-md-4 col-lg-3"
         col.innerHTML = `<div class="card" style="width: 15rem;">
-          <img src=${song.md5_image} class="card-img-top" alt=${song.title_short}>
+          <img src=${song.album.cover_medium} class="card-img-top" alt=${song.title_short}>
           <div class="card-body">
             <p class="card-text">${song.title}</p>
           </div>
@@ -83,10 +84,3 @@ const options = {
 
 }
 
-window.onload = () =>{
-    pinkFloyd()
-    daftPunk()
-    metallica()
-    
-
-}
